@@ -3,17 +3,60 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lud1161.github.io/posts/cat-chat-googlectf-writeup/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lud1161.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://lud1161.github.io/tags/css-injection/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lud1161.github.io/tags/ctf/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lud1161.github.io/categories/ctf-writeups/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lud1161.github.io/tags/google-ctf/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lud1161.github.io/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lud1161.github.io/posts/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lud1161.github.io/tags/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lud1161.github.io/tags/writeup/</loc>
+    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
     <priority>0</priority>
   </url>
   
