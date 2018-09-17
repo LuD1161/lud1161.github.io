@@ -3,12 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lud1161.github.io/posts/hacker-movie-club-csaw-quals-2018/</loc>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lud1161.github.io/posts/cat-chat-googlectf-writeup/</loc>
     <lastmod>2018-06-28T11:55:44+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://lud1161.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lud1161.github.io/tags/csaw-2018/</loc>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -20,13 +31,13 @@
   
   <url>
     <loc>https://lud1161.github.io/tags/ctf/</loc>
-    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lud1161.github.io/categories/ctf-writeups/</loc>
-    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -38,25 +49,31 @@
   
   <url>
     <loc>https://lud1161.github.io/</loc>
-    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lud1161.github.io/posts/</loc>
-    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lud1161.github.io/tags/</loc>
-    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lud1161.github.io/tags/web-cache-poisoning/</loc>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lud1161.github.io/tags/writeup/</loc>
-    <lastmod>2018-06-28T11:55:44+05:30</lastmod>
+    <lastmod>2018-09-17T12:54:20+05:30</lastmod>
     <priority>0</priority>
   </url>
   

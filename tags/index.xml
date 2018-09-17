@@ -6,10 +6,19 @@
     <description>Recent content in Tags on LuD1161&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 2018 - LuD1161</copyright>
-    <lastBuildDate>Thu, 28 Jun 2018 11:55:44 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 17 Sep 2018 12:54:20 +0530</lastBuildDate>
     
 	<atom:link href="https://lud1161.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Csaw 2018</title>
+      <link>https://lud1161.github.io/tags/csaw-2018/</link>
+      <pubDate>Mon, 17 Sep 2018 12:54:20 +0530</pubDate>
+      
+      <guid>https://lud1161.github.io/tags/csaw-2018/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Css Injection</title>
@@ -23,7 +32,7 @@
     <item>
       <title>Ctf</title>
       <link>https://lud1161.github.io/tags/ctf/</link>
-      <pubDate>Thu, 28 Jun 2018 11:55:44 +0530</pubDate>
+      <pubDate>Mon, 17 Sep 2018 12:54:20 +0530</pubDate>
       
       <guid>https://lud1161.github.io/tags/ctf/</guid>
       <description></description>
@@ -39,9 +48,18 @@
     </item>
     
     <item>
+      <title>Web Cache Poisoning</title>
+      <link>https://lud1161.github.io/tags/web-cache-poisoning/</link>
+      <pubDate>Mon, 17 Sep 2018 12:54:20 +0530</pubDate>
+      
+      <guid>https://lud1161.github.io/tags/web-cache-poisoning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Writeup</title>
       <link>https://lud1161.github.io/tags/writeup/</link>
-      <pubDate>Thu, 28 Jun 2018 11:55:44 +0530</pubDate>
+      <pubDate>Mon, 17 Sep 2018 12:54:20 +0530</pubDate>
       
       <guid>https://lud1161.github.io/tags/writeup/</guid>
       <description></description>
